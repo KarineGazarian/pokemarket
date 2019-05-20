@@ -1,0 +1,104 @@
+.card {
+  h1{/* H1 */
+
+
+position: absolute;
+width: 866px;
+height: 72px;
+left: 138px;
+top: 53px;
+
+background: #FFFFFF;
+
+  }
+  h3{
+
+
+position: absolute;
+width: 74px;
+height: 40px;
+left: 138px;
+top: 142px;
+
+  }
+
+  p{
+
+
+position: absolute;
+width: 105px;
+height: 23px;
+left: 138px;
+top: 211px;
+
+  }
+}
+
+.rectangle2 {
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0.6%;
+
+background: rgba(246, 246, 246, 0.94);
+border: 1px solid #C8C8C8;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  h3{
+  position: absolute;
+  left: 3.7%;
+  right: 8.4%;
+  top: 80.12%;
+  bottom: 8.43%;
+
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 34px;
+  line-height: 41px;
+
+  color: #000000;
+
+    }
+  }
+
+.rectangle3{
+
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 40.06%;
+
+background: url(yoga.jpg), #C4C4C4;
+}
+
+/* H3 */
+
+
+
+
+
+/* grading */
+
+
+position: absolute;
+width: 134px;
+height: 27px;
+left: 15px;
+top: 224px;
+
+
+
+/* Intensity level */
+
+
+position: absolute;
+width: 66px;
+height: 27px;
+left: 329px;
+top: 279px;
+
+backdrop-filter: blur(4px);
