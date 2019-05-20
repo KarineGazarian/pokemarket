@@ -1,1 +1,9 @@
 // Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+
+.container {
+  h1{
+    font-family: 'Bangers', cursive;
+    font-size: 60px;
+  }
+}
