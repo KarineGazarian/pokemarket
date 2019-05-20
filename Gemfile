@@ -16,6 +16,8 @@ gem 'uglifier'
 gem 'webpacker'
 #authentication gem
 gem 'devise'
+#faker gam
+gem 'faker'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
