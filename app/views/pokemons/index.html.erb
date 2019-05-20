@@ -1,0 +1,6 @@
+<% @pokemons.each do |pokemon| %>
+  <h3> <%= link_to pokemon.name, pokemon %></h3>
+  <p> Category: <%= pokemon.category %></p>
+  <p> Level: <%= pokemon.level %></p>
+  <p><strong> Price: <%= pokemon.price %>€</strong></p>
+<% end %>

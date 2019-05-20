@@ -1,0 +1,9 @@
+<h3> <%= @pokemon.name %> </h3>
+
+<p> Category: <%= @pokemon.category %></p>
+<p> Level: <%= @pokemon.level %></p>
+<p><strong> Price: <%= @pokemon.price %>€</strong></p>
+
+<p>Sold by: <%= @pokemon.user %> </p>
+
+<%= link_to '<< Back', pokemons_path %>
