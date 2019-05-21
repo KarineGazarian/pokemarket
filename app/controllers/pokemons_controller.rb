@@ -2,15 +2,18 @@ class PokemonsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @pokemons = Pokemon.all
+    # @pokemons = Pokemon.all
+    @pokemons = policy_scope(Pokemon)
   end
 
   def new
+    authorize @pokemon
     @user = User.find(params[:user_id])
     @pokemon = Pokemon.new
   end
 
   def create
+    authorize @pokemon
     @user = User.find(params[:user_id])
     @pokemon = pokemon.new(poke_params)
     @pokemon.user = @user
@@ -20,6 +23,7 @@ class PokemonsController < ApplicationController
   end
 
   def show
+    authorize @pokemon
     @pokemon = Pokemon.find(params[:id])
   end
 
