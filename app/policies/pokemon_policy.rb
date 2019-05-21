@@ -2,19 +2,16 @@ class PokemonPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
+      # scope.where(@pokemon.user_id) == user.id
     end
   end
 
-  def index?
-    true
-  end
-
   def show?
-    true
+      # scope.where(@pokemon.user_id) == user.id
   end
 
   def create?
-    record.user == user
+    true
   end
 
   def update?

@@ -8,7 +8,7 @@ class PokemonsController < ApplicationController
 
   def show
     @pokemon = Pokemon.find(params[:id])
-    authorize @pokemon
+    # authorize @pokemon
   end
 
   def new
@@ -18,13 +18,12 @@ class PokemonsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @pokemon = pokemon.new(poke_params)
-    @pokemon.user = @user
+    @pokemon = Pokemon.new(poke_params)
+    @pokemon.user = current_user
     authorize @pokemon
     @pokemon.save
 
-    redirect_to root_path
+    redirect_to pokemon_path(@pokemon)
   end
 
   def edit
