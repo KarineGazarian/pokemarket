@@ -1,6 +1,9 @@
-<div class="container">
-<h2>Sign up</h2>
 
+<div>
+<h2 class ="form-title">Sign up</h2>
+</div>
+<div class="form-background">
+<div class="container">
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
@@ -21,6 +24,7 @@
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
+  </div>
   </div>
 <% end %>
 
