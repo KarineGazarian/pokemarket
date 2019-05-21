@@ -27,8 +27,8 @@ alice = User.create!(
 
 puts 'Creating pokemons...'
 
-url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
 
+URL= ["https://res.cloudinary.com/dpvrvx63j/image/upload/v1558432047/Pokemon%20market/pikachu_dsgefu.jpg", "https://res.cloudinary.com/dpvrvx63j/image/upload/v1558432042/Pokemon%20market/Charizard_x4n8hn.png", "https://res.cloudinary.com/dpvrvx63j/image/upload/v1558432034/Pokemon%20market/Bulbasaur_nlifv7.png"]
 
 10.times do
   pokemon = Pokemon.new(
@@ -37,7 +37,7 @@ url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_
   level: rand(1..100),
   price: rand(1..1000),
   )
-  pokemon.remote_photo_url = url
+  pokemon.remote_photo_url = URL.sample
   pokemon.user = kaka
   pokemon.save!
 end
@@ -49,6 +49,7 @@ end
   level: rand(1..100),
   price: rand(1..1000),
   )
+  pokemon.remote_photo_url = URL.sample
   pokemon.user = alice
   pokemon.save!
 end
