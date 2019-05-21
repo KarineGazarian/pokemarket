@@ -32,7 +32,12 @@
 }
 /* Style the back side */
 .flip-card-back {
-  background-color: #CACACA;
+  background-color: white;
   color: black;
   transform: rotateY(180deg);
+}
+
+.flip-card-back a {
+  font-size: 30px;
+  color: #CC0000;
 }
