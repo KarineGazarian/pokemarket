@@ -1,36 +1,18 @@
-<div class="container" style="max-width: 600px;">
 
   <div class="d-flex justify-content-between">
-    <img src="" alt=""> <!--  need to set large dimensions here -->
+    <%= cl_image_tag @pokemon.photo, height: 200, width: 200, crop: :fill %>
+
     <div>
       <h3> <%= @pokemon.name %> </h3>
       <p> Category: <%= @pokemon.category %></p>
       <p> Level: <%= @pokemon.level %></p>
       <p>Sold by: <%= @pokemon.user.username %> </p>
     </div>
+
     <div>
       <p> Price: <%= @pokemon.price %>€</p>
     </div>
   </div>
 
-</div>
-
-<!-- add pokemon -->
-<% if policy(@pokemon).create? %>
-<% link_to "Add a Pokemon to your PokeBowl", new_user_pokemon_path(@pokemon) %>
-<% end %>
-
-<!-- update pokemon -->
-
-<% if policy(@pokemon).update? %>
-<% link_to "Edit your PokeBowl", edit_user_pokemon_path(@pokemon) %>
-<% end %>
-
-
-<!-- destroy pokemon -->
-
-<% if policy(pokemon).destroy? %>
-<% link_to "Delete a pokemon from your Bowl", pokemon_path(@pokemon) method: :delete %>
-<% end %>
-
 <%= link_to '<< Back', pokemons_path %>
+
