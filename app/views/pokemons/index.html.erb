@@ -1,6 +1,32 @@
-<% @pokemons.each do |pokemon| %>
-  <h3> <%= link_to pokemon.name, pokemon %></h3>
-  <p> Category: <%= pokemon.category %></p>
-  <p> Level: <%= pokemon.level %></p>
-  <p><strong> Price: <%= pokemon.price %>€</strong></p>
-<% end %>
+<div class="cards">
+  <% @pokemons.each do |pokemon| %>
+    <div class="flip-card">
+
+      <%= link_to pokemon do %>
+        <div class="card-trip flip-card-inner">
+
+            <div class="flip-card-front">
+              <%= cl_image_tag pokemon.photo, height: 100, width: 100, crop: :fill %>
+
+
+              <div class="card-trip-infos">
+                <div>
+                  <h3><%= pokemon.name %></h3>
+                  <p>Category: <%= pokemon.category %></p>
+                  <p>Level: <%= pokemon.level %></p>
+                </div>
+                <h2 class="card-trip-pricing"><%= pokemon.price %>€</h2>
+              </div>
+            </div>
+
+            <div class="flip-card-back px-4 mt-4">
+              <h3><%= pokemon.name %></h3>
+              <p>Sold by: <%= pokemon.user.username %> </p>
+              <p>Description: Lorem Ipsum </p>
+            </div>
+        </div>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>

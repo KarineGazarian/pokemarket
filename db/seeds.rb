@@ -27,6 +27,9 @@ alice = User.create!(
 
 puts 'Creating pokemons...'
 
+
+URL= ["https://res.cloudinary.com/dpvrvx63j/image/upload/v1558432047/Pokemon%20market/pikachu_dsgefu.jpg", "https://res.cloudinary.com/dpvrvx63j/image/upload/v1558432042/Pokemon%20market/Charizard_x4n8hn.png", "https://res.cloudinary.com/dpvrvx63j/image/upload/v1558432034/Pokemon%20market/Bulbasaur_nlifv7.png"]
+
 10.times do
   pokemon = Pokemon.new(
   name: Faker::Games::Pokemon.name,
@@ -34,6 +37,7 @@ puts 'Creating pokemons...'
   level: rand(1..100),
   price: rand(1..1000),
   )
+  pokemon.remote_photo_url = URL.sample
   pokemon.user = kaka
   pokemon.save!
 end
@@ -45,8 +49,11 @@ end
   level: rand(1..100),
   price: rand(1..1000),
   )
+  pokemon.remote_photo_url = URL.sample
   pokemon.user = alice
   pokemon.save!
 end
 
 puts 'Finished!'
+
+
