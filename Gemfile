@@ -16,6 +16,8 @@ gem 'uglifier'
 gem 'webpacker'
 #authentication gem
 gem 'devise'
+# authorisation gem
+gem 'pundit'
 #faker gam
 gem 'faker'
 gem 'dotenv-rails', groups: [:development, :test]
