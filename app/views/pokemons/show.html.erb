@@ -1,9 +1,18 @@
-<h3> <%= @pokemon.name %> </h3>
+<div class="container" style="max-width: 600px;">
 
-<p> Category: <%= @pokemon.category %></p>
-<p> Level: <%= @pokemon.level %></p>
-<p><strong> Price: <%= @pokemon.price %>€</strong></p>
+  <div class="d-flex justify-content-between">
+    <img src="" alt=""> <!--  need to set large dimensions here -->
+    <div>
+      <h3> <%= @pokemon.name %> </h3>
+      <p> Category: <%= @pokemon.category %></p>
+      <p> Level: <%= @pokemon.level %></p>
+      <p>Sold by: <%= @pokemon.user.username %> </p>
+    </div>
+    <div>
+      <p> Price: <%= @pokemon.price %>€</p>
+    </div>
+  </div>
 
-<p>Sold by: <%= @pokemon.user %> </p>
+</div>
 
 <%= link_to '<< Back', pokemons_path %>
