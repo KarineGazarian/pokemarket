@@ -27,6 +27,9 @@ alice = User.create!(
 
 puts 'Creating pokemons...'
 
+url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
+
+
 10.times do
   pokemon = Pokemon.new(
   name: Faker::Games::Pokemon.name,
@@ -34,6 +37,7 @@ puts 'Creating pokemons...'
   level: rand(1..100),
   price: rand(1..1000),
   )
+  pokemon.remote_photo_url = url
   pokemon.user = kaka
   pokemon.save!
 end
@@ -50,3 +54,5 @@ end
 end
 
 puts 'Finished!'
+
+
