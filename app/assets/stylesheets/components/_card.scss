@@ -1,7 +1,13 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 106px;
+  grid-gap: 30px;
+}
+
+.cards-landing {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 60px;
 }
 
 // Smallest device
@@ -29,6 +35,12 @@
 @media (min-width: 992px) {
   .cards {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .cards-landing {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
