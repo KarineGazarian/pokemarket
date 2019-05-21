@@ -23,18 +23,19 @@ class PokemonsController < ApplicationController
     authorize @pokemon
     @pokemon.save
 
-    redirect_to pokemon_path(@pokemon)
+    redirect_to dashboard_path
   end
 
   def edit
     @pokemon = Pokemon.find(params[:id])
+    authorize @pokemon
   end
 
   def update
     @pokemon = Pokemon.find(params[:id])
     authorize @pokemon
     if @pokemon.update(poke_params)
-      redirect_to @pokemon
+      redirect_to dashboard_path, notice: "You just updated a pokemon"
     else
       render :edit
     end
@@ -45,7 +46,7 @@ class PokemonsController < ApplicationController
     authorize @pokemon
     @pokemon.destroy
 
-    redirect_to pokemons_path, notice: "You just deleted a Pokemon from your Bowl"
+    redirect_to dashboard_path, notice: "You just deleted a Pokemon from your Bowl"
   end
 
   private
