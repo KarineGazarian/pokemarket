@@ -1,6 +1,5 @@
-
-  <div class="d-flex" >
-    <%= cl_image_tag @pokemon.photo, height: 200, width: 200, crop: :fill %>
+<div class="d-flex" >
+  <%= cl_image_tag @pokemon.photo, height: 200, width: 200, crop: :fill %>
 
     <div>
       <h3> <%= @pokemon.name %> </h3>
@@ -12,6 +11,9 @@
     <div>
       <p> Price: <%= @pokemon.price %>€</p>
     </div>
+  
   </div>
 
 <%= link_to '<< Back', pokemons_path %>
+
+

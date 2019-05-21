@@ -44,7 +44,7 @@
 .card-category {
   background-size: cover;
   background-position: top;
-  height: 180px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,7 +53,7 @@
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
   font-family: 'Bangers', cursive;
 }
 
@@ -96,5 +96,30 @@
   position: relative;
 }
 
+// DASHBOARD PAGE
 
+.card-trip-dashboard{
+  // overflow: hidden;
+  margin-bottom: 8px;
+  list-style-type: none;
+  padding: 0 !important;
+  // padding: 0px !important
+
+  a:hover {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #156EEA;
+
+}}
+
+.card-trip-dashboard p:hover {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.card-details {
+  padding-left:5px;
+}
 
