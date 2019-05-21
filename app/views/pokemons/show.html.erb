@@ -1,16 +1,19 @@
-<div class="container" style="max-width: 600px;">
+<div class="d-flex" >
+  <%= cl_image_tag @pokemon.photo, height: 200, width: 200, crop: :fill %>
 
-  <div class="d-flex justify-content-between">
-    <img src="" alt=""> <!--  need to set large dimensions here -->
     <div>
       <h3> <%= @pokemon.name %> </h3>
       <p> Category: <%= @pokemon.category %></p>
       <p> Level: <%= @pokemon.level %></p>
       <p>Sold by: <%= @pokemon.user.username %> </p>
     </div>
+
     <div>
       <p> Price: <%= @pokemon.price %>€</p>
     </div>
+  
   </div>
 
-</div>
+<%= link_to '<< Back', pokemons_path %>
+
+
