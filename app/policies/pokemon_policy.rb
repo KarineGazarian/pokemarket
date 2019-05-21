@@ -21,7 +21,7 @@ class PokemonPolicy < ApplicationPolicy
     record.user == user
   end
 
-  def update?
+  def destroy?
     record.user == user
   end
 end

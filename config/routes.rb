@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :users do
-    resources :pokemons, only: [:new, :create]
+    resources :pokemons, only: [:new, :create, :edit, :update, :destroy]
   end
 
   resources :pokemons, only: [:index, :show]
