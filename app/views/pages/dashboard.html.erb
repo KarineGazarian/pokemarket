@@ -1,0 +1,10 @@
+<!-- dashboard.html.erb -->
+
+<h1>Dashboard</h1>
+
+<% @user_pokemons.each do |pokemon| %>
+  <h3><%= pokemon.name %></h3>
+  <p> Category: <%= pokemon.category %></p>
+  <p> Level: <%= pokemon.level %></p>
+  <p><strong> Price: <%= pokemon.price %>€</strong></p>
+<% end %>

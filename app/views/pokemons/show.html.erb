@@ -4,24 +4,6 @@
 <p> Level: <%= @pokemon.level %></p>
 <p><strong> Price: <%= @pokemon.price %>€</strong></p>
 
-<p>Sold by: <%= @pokemon.user %> </p>
-
-<!-- add pokemon -->
-<% if policy(@pokemon).create? %>
-<% link_to "Add a Pokemon to your PokeBowl", new_user_pokemon_path(@pokemon) %>
-<% end %>
-
-<!-- update pokemon -->
-
-<% if policy(@pokemon).update? %>
-<% link_to "Edit your PokeBowl", edit_user_pokemon_path(@pokemon) %>
-<% end %>
-
-
-<!-- destroy pokemon -->
-
-<% if policy(pokemon).destroy? %>
-<% link_to "Delete a pokemon from your Bowl", pokemon_path(@pokemon) method: :delete %>
-<% end %>
+<p>Sold by: <%= @pokemon.user.username %> </p>
 
 <%= link_to '<< Back', pokemons_path %>
