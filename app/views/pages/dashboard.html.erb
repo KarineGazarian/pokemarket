@@ -45,24 +45,25 @@
 
 <div>
   <h3>My Wishlist</h3>
-  <div class="cards">
-    <%  if @wishlist.nil? %>
-    <p> My Wishlist is empty</p>
-    <% else %>
-    <% @wishlist_pokemons.each do |wishlist| %>
-    <div class="card-trip card-trip-dashboard card-trip-infos">
-      <div class="card-details">
-        <h3><%= wishlist.pokemon.name %></h3>
-          <p> Category: <%= wishlist.pokemon.category %></p>
-          <p> Level: <%= wishlist.pokemon.level %></p>
-          <p><strong> Price: <%= wishlist.pokemon.price %>€</strong></p>
-        <%= link_to "Remove", pokemon_dashboard_path(wishlist.pokemon), method: :delete %>
-      </div>
-    </div>
-
-    <% end %>
+  <div class="cards-dashboard">
+      <% @wishlist_pokemons.each do |wishlist| %>
+        <div class="card-trip card-trip-dashboard card-trip-infos">
+          <div class="card-details">
+            <h3><%= wishlist.pokemon.name %></h3>
+              <% if wishlist.pokemon.photoseed.nil? %>
+                <%= cl_image_tag wishlist.pokemon.photo, height: 300, width: 400, crop: :fill, class: "rounded mx-auto d-block" %>
+                <% else %>
+                <%= image_tag wishlist.pokemon.photoseed,height: 300, width: 400, crop: :fill, align: :center, class: "rounded mx-auto d-block" %>
+              <% end %>
+              <p> Category: <%= wishlist.pokemon.category %></p>
+              <p> Level: <%= wishlist.pokemon.level %></p>
+              <p><strong> Price: <%= wishlist.pokemon.price %>€</strong></p>
+              <%= link_to "Remove", pokemon_dashboard_path(wishlist.pokemon), method: :delete %>
+          </div>
+        </div>
+      <% end %>
   </div>
-   <% end  %>
+
 </div>
 
 
