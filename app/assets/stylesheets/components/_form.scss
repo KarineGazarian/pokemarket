@@ -9,5 +9,31 @@
 }
 
 .form-text {
-  font-size: 20px
+  font-size: 20px;
+  max-height: 500px;
 }
+
+
+
+// .form-background2 {
+
+// }
+
+
+.form-group {
+  margin: 20px;
+}
+
+
+.container-newp {
+  max-width: 700px;
+  background-image: url("https://www.multarte.com.br/wp-content/uploads/2019/03/pokemon-png6.png");
+  background-position: calc(100% - 5px);
+  justify-content: center;
+  margin: auto;
+}
+
+
+// .btn-new {
+//   align: right;
+// }

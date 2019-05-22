@@ -1,7 +1,15 @@
-<h2>Put your Pokemon for sale!</h2>
+<div>
+<h2 class ="form-title">Put your Pokemon on Sale!</h2>
+</div>
+
+
+  <div class= "container container-newp mt-4 form-text form-group ">
 
 <%= render 'form', pokemon: @pokemon %>
 
+<%= link_to  '<< Back',  pokemons_path %>
+
+</div>
+
 <br>
 
-<%= link_to '<< Back', pokemons_path %>
