@@ -5,7 +5,7 @@
   </div>
 
   <div class="form-inputs">
-    <%= f.input :category %>
+    <%= f.input :category, collection: %w(normal fire water grass electric ice fighting poison ground flying psychic bug rock ghost dark dragon steel fairy) %>
   </div>
 
   <div class="form-inputs">
@@ -21,7 +21,7 @@
     <%= f.input :photo_cache, as: :hidden %>
   </div>
 
-  <div class="form-actions">
+  <div class="form-actions align-center">
     <%= f.button :submit, class:"btn btn-primary"%>
   </div>
 <% end %>

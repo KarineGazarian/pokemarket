@@ -5,8 +5,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    # @user_pokemons = policy_scope(Pokemon)
     @user_pokemons = policy_scope(Pokemon).where(user: current_user)
+    @wishlist_pokemons = policy_scope(Wishlist).where(user: current_user)
   end
 
 end

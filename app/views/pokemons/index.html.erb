@@ -2,19 +2,20 @@
   <% @pokemons.each do |pokemon| %>
     <div class="flip-card">
 
-      <%= link_to pokemon do %>
+
         <div class="card-trip flip-card-inner">
 
             <div class="flip-card-front">
+              <% if pokemon.photoseed.nil? %>
               <%= cl_image_tag pokemon.photo,crop: :fill, gravity: :face, class: 'flip-img' %>
-
-
-
+              <% else %>
+              <%= image_tag pokemon.photoseed,crop: :fill, gravity: :face, class: 'flip-img' %>
+              <% end %>
 
               <div class="card-trip-infos">
                 <div>
-                      <h3><%= pokemon.name %></h3>
-                      <h2 class="card-trip-pricing"><%= pokemon.price %>€</h2>
+                  <h3><%= pokemon.name %></h3>
+                  <h2 class="card-trip-pricing"><%= pokemon.price %>€</h2>
                   <p>Category: <%= pokemon.category %></p>
                   <p>Level: <%= pokemon.level %></p>
                 </div>
@@ -24,10 +25,11 @@
             <div class="flip-card-back px-4">
               <h3 style= "margin-top: 10px;"><%= pokemon.name %></h3>
               <p>Sold by: <%= pokemon.user.username %> </p>
-              <p>Description: Lorem Ipsum </p>
+              <p>Description: <%= pokemon.description %> </p>
+              <%= link_to "Add to wishlist", pokemon_dashboard_path(pokemon), method: :post, class:"btn btn-primary"%>
             </div>
         </div>
-      <% end %>
+
 
     </div>
   <% end %>
