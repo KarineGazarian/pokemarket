@@ -10,6 +10,11 @@
   grid-gap: 60px;
 }
 
+.cards-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
@@ -114,7 +119,7 @@
   // overflow: hidden;
   margin-bottom: 8px;
   list-style-type: none;
-  padding: 0 !important;
+  padding: 0 ;
   // padding: 0px !important
 
   a:hover {
@@ -131,7 +136,6 @@
   font-weight: bolder;
 }
 
-.card-details {
-  padding-left:5px;
+.add-poke {
+  text-decoration: none;
 }
-
