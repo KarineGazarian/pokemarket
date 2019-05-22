@@ -10,11 +10,18 @@
   grid-gap: 60px;
 }
 
+
 .cards-dashboard {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
 }
+
+.cards-landing a:hover {
+  text-decoration: none;
+}
+
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
@@ -66,12 +73,25 @@
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
   font-family: 'Bangers', cursive;
+
+  &:hover,
+  &:focus {
+    transform: scale3d(1.01, 1.01, 1);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.card-grey {
+  background: $light-gray;
 }
 
 // INDEX PAGE
