@@ -34,6 +34,10 @@ class ApplicationPolicy
     false
   end
 
+  def add_to_wishlist?
+    false
+  end
+
   class Scope
     attr_reader :user, :scope
 
