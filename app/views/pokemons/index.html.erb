@@ -22,11 +22,14 @@
               </div>
             </div>
 
-            <div class="flip-card-back px-4">
+            <div class="flip-card-back px-4 d-flex justify-content-around flex-column">
               <h3 style= "margin-top: 10px;"><%= pokemon.name %></h3>
               <p>Sold by: <%= pokemon.user.username %> </p>
               <p>Description: <%= pokemon.description %> </p>
-              <%= link_to "Add to wishlist", pokemon_dashboard_path(pokemon), method: :post, class:"btn btn-primary"%>
+              <div class= "align-self-end justify-self-end">
+              <%= link_to "add wishlist", pokemon_dashboard_path(pokemon), method: :post,  class: "btn btn-primary add-wishlist" %>
+              </div>
+                </div>
             </div>
         </div>
 
