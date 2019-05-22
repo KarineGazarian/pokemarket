@@ -27,9 +27,8 @@
               <p>Sold by: <%= pokemon.user.username %> </p>
               <p>Description: <%= pokemon.description %> </p>
               <div class= "align-self-end justify-self-end">
-              <%= link_to "add wishlist", pokemon_dashboard_path(pokemon), method: :post,  class: "btn btn-primary add-wishlist" %>
+                <%= link_to "add wishlist", pokemon_dashboard_path(pokemon), method: :post,  class: "btn btn-primary add-wishlist" %>
               </div>
-                </div>
             </div>
         </div>
 
