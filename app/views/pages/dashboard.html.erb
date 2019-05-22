@@ -1,18 +1,46 @@
 <!-- dashboard.html.erb -->
-<h1>Dashboard</h1>
-<div class="cards">
-  <% @user_pokemons.each do |pokemon| %>
-  <div class="card-trip card-trip-dashboard card-trip-infos">
-    <div class="card-details">
-      <h3><%= pokemon.name %></h3>
-        <p> Category: <%= pokemon.category %></p>
-        <p> Level: <%= pokemon.level %></p>
-        <p><strong> Price: <%= pokemon.price %>€</strong></p>
-        <p><%= link_to 'delete', pokemon_path(pokemon), method: :delete %></p>
-        <p><%= link_to 'edit', edit_pokemon_path(pokemon) %></p>
-    </div>
+<h1>My Pokebowl</h1>
+
+<br>
+
+<div>
+  <div class="d-flex justify-content-between">
+    <h3>My Pokemons</h3>
+    <%= link_to "Add a pokemon", new_pokemon_path %>
   </div>
-  <% end %>
+  <div class="cards">
+    <% @user_pokemons.each do |pokemon| %>
+    <div class="card-trip card-trip-dashboard card-trip-infos">
+      <div class="card-details">
+        <h3><%= pokemon.name %></h3>
+          <p> Category: <%= pokemon.category %></p>
+          <p> Level: <%= pokemon.level %></p>
+          <p><strong> Price: <%= pokemon.price %>€</strong></p>
+          <p><%= link_to 'delete', pokemon_path(pokemon), method: :delete %></p>
+          <p><%= link_to 'edit', edit_pokemon_path(pokemon) %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
 
-<%= link_to "Add a pokemon", new_pokemon_path %>
+<br>
+
+<div>
+  <h3>My Wishlist</h3>
+  <div class="cards">
+    <% @wishlist_pokemons.each do |wishlist| %>
+    <div class="card-trip card-trip-dashboard card-trip-infos">
+      <div class="card-details">
+        <h3><%= wishlist.pokemon.name %></h3>
+          <p> Category: <%= wishlist.pokemon.category %></p>
+          <p> Level: <%= wishlist.pokemon.level %></p>
+          <p><strong> Price: <%= wishlist.pokemon.price %>€</strong></p>
+        <%= link_to "Remove", pokemon_dashboard_path(wishlist.pokemon), method: :delete %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
