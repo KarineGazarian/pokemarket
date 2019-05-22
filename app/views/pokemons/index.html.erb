@@ -25,7 +25,7 @@
             <div class="flip-card-back px-4">
               <h3 style= "margin-top: 10px;"><%= pokemon.name %></h3>
               <p>Sold by: <%= pokemon.user.username %> </p>
-              <p>Description: Lorem Ipsum </p>
+              <p>Description: pokemon.description </p>
               <%= link_to "Add to wishlist", pokemon_dashboard_path(pokemon), method: :post, class:"btn btn-primary"%>
             </div>
         </div>
