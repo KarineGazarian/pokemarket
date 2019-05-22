@@ -157,7 +157,7 @@ pokemon = Pokemon.new(
   level: 50,
   price: 48,
   description: "On promotion",
-  photoseed: "http://static.pokemonpets.com/images/monsters-images-800-800/94-Gengar.png"
+  photoseed: "https://projectpokemon.org/home/uploads/monthly_2018_03/large.Gyarados-Pokemon-X-and-Y.jpg.9c32530a4f9b5fe8bb6469758ecf8e4c.jpg"
   )
   pokemon.user = frankie
   pokemon.save!

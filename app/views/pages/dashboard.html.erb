@@ -1,23 +1,40 @@
 <!-- dashboard.html.erb -->
-<h1>My Pokebowl</h1>
+<div>
+<h1 class ="form-title">My Pokebowl</h1>
+</div>
 
 <br>
 
 <div>
   <div class="d-flex justify-content-between">
     <h3>My Pokemons</h3>
-    <%= link_to "Add a pokemon", new_pokemon_path %>
+    <%= link_to new_pokemon_path do %>
+     <%= image_tag "https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG", height: 30, width: 30 %>
+     <%= "Add a pokemon" %>
+    <% end  %>
   </div>
-  <div class="cards">
+  <div class="cards-dashboard">
     <% @user_pokemons.each do |pokemon| %>
     <div class="card-trip card-trip-dashboard card-trip-infos">
       <div class="card-details">
         <h3><%= pokemon.name %></h3>
-          <p> Category: <%= pokemon.category %></p>
-          <p> Level: <%= pokemon.level %></p>
-          <p><strong> Price: <%= pokemon.price %>€</strong></p>
-          <p><%= link_to 'delete', pokemon_path(pokemon), method: :delete %></p>
-          <p><%= link_to 'edit', edit_pokemon_path(pokemon) %></p>
+        <% if pokemon.photoseed.nil? %>
+        <%= cl_image_tag pokemon.photo, height: 300, width: 400, crop: :fill, class: "rounded mx-auto d-block" %>
+        <% else %>
+        <%= image_tag pokemon.photoseed,height: 300, width: 400, crop: :fill, align: :center, class: "rounded mx-auto d-block" %>
+        <% end %>
+        <div class="d-flex justify-content-between">
+
+          <div class="ml-3">
+            <p> Category: <%= pokemon.category %></p>
+            <p> Level: <%= pokemon.level %></p>
+            <p><%= link_to 'delete', pokemon_path(pokemon), method: :delete %></p>
+            <p><%= link_to 'edit', edit_pokemon_path(pokemon) %></p>
+          </div>
+          <div class="card-trip-pricing mr-3">
+            <p><strong> Price: <%= pokemon.price %>€</strong></p>
+          </div>
+        </div>
       </div>
     </div>
     <% end %>
@@ -29,6 +46,9 @@
 <div>
   <h3>My Wishlist</h3>
   <div class="cards">
+    <%  if @wishlist.nil? %>
+    <p> My Wishlist is empty</p>
+    <% else %>
     <% @wishlist_pokemons.each do |wishlist| %>
     <div class="card-trip card-trip-dashboard card-trip-infos">
       <div class="card-details">
@@ -39,8 +59,10 @@
         <%= link_to "Remove", pokemon_dashboard_path(wishlist.pokemon), method: :delete %>
       </div>
     </div>
+
     <% end %>
   </div>
+   <% end  %>
 </div>
 
 
