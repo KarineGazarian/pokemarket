@@ -4,7 +4,7 @@
   <img src="https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG" alt="" style="width:60px; height:60px;">
   <img src="https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG" alt="" style="width:60px; height:60px;">
   <img src="https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG" alt="" style="width:60px; height:60px;">
-  <h1 class="px-4">Welcome to <strong style="text-shadow: 1px 1px 3px #ff0000;">PokeMarket</strong></h1>
+  <h1 class="px-4">Welcome to <%= link_to "PokeMarket", pokemons_path, class:"title" %></h1>
   <img src="https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG" alt="" style="width:60px; height:60px;">
   <img src="https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG" alt="" style="width:60px; height:60px;">
   <img src="https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG" alt="" style="width:60px; height:60px;">
@@ -13,17 +13,29 @@
 <br>
 
 <div class="cards-landing">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path("Pokemon market/pikachu_dsgefu.jpg", crop: :fill )%>')">
-    Pikachu
-  </div>
+  <%= link_to root_path do %>
+    <div class="card-grey">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path("Pokemon market/pikachu_dsgefu.jpg", crop: :fill )%>')">
+        Pikachu
+      </div>
+    </div>
+  <% end %>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path("Pokemon market/Charizard_x4n8hn.png", crop: :fill )%>')">
-    Charizard
-  </div>
+  <%= link_to root_path do %>
+    <div class="card-grey">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path("Pokemon market/Charizard_x4n8hn.png", crop: :fill )%>')">
+        Charizard
+      </div>
+    </div>
+  <% end %>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path("Pokemon market/Bulbasaur_nlifv7.png", gravity: :face)%>')">
-    Bulbasaur
-  </div>
+  <%= link_to root_path do %>
+    <div class="card-grey">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path("Pokemon market/Bulbasaur_nlifv7.png", gravity: :face)%>')">
+        Bulbasaur
+      </div>
+    </div>
+  <% end %>
 </div>
 
 
