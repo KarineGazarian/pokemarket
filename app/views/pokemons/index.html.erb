@@ -6,7 +6,11 @@
         <div class="card-trip flip-card-inner">
 
             <div class="flip-card-front">
+              <% if pokemon.photoseed.nil? %>
               <%= cl_image_tag pokemon.photo,crop: :fill, gravity: :face, class: 'flip-img' %>
+              <% else %>
+              <%= image_tag pokemon.photoseed,crop: :fill, gravity: :face, class: 'flip-img' %>
+              <% end %>
 
               <div class="card-trip-infos">
                 <div>
