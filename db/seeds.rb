@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts 'Cleaning database...'
+Wishlist.destroy_all
 Pokemon.destroy_all
 User.destroy_all
 
@@ -97,7 +98,7 @@ pokemon = Pokemon.new(
 
 pokemon = Pokemon.new(
   name: "alakazam",
-  category: "psy",
+  category: "psychic",
   level: 30,
   price: 20,
   description: "Be careful with its spoons, if you touch them you die",
@@ -163,7 +164,7 @@ pokemon = Pokemon.new(
 
 pokemon = Pokemon.new(
   name: "mew",
-  category: "psy",
+  category: "psychic",
   level: 120,
   price: 1000,
   description: "The most powerful pokemon you've ever seen, can beat anyone with only one attack",
