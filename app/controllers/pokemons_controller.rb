@@ -3,11 +3,17 @@ class PokemonsController < ApplicationController
 
   def index
     # @pokemons = Pokemon.all
+    @pokemons = policy_scope(Pokemon).all
     if params[:query].present?
-      @pokemons = Pokemon.search_by_name_and_category(params[:query])
+      if Pokemon.search_by_name_and_category(params[:query]).present?
+        @pokemons = Pokemon.search_by_name_and_category(params[:query])
+        else
+      flash[:notice] = "😥 There is nothing corresponding to your search, please try again!"
+      redirect_to pokemons_path
+      end
     else
-    @pokemons = policy_scope(Pokemon)
-  end
+    @pokemons = policy_scope(Pokemon).all
+    end
   end
 
   def show
