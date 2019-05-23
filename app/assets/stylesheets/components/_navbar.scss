@@ -7,8 +7,28 @@
   flex-grow: 0;
 }
 
+
+
+.new-color{
+  width:40vh;
+  text-align: center;
+  background-color: #393e46;
+  color: #f1f1f1;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: none;
+  border-radius: 25px;
+  display: inline-block;
+  outline: none !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+::placeholder {
+  color: #f1f1f1;
+  font-size: 15px;
 }
 
 

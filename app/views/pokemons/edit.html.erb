@@ -1,8 +1,15 @@
 <!-- edit.html.erb -->
-<h2>Edit your list of Pokemon</h2>
+<div>
+<h2 class ="form-title">Edit your list of Pokemon</h2>
+</div>
+
+<div class= "container container-newp mt-4 form-text form-group ">
 
 <%= render 'form', pokemon: @pokemon %>
 
 <br>
 
 <%= link_to '<< Back', pokemons_path %>
+</div>
+
+
