@@ -49,6 +49,10 @@ class PokemonsController < ApplicationController
     redirect_to dashboard_path, notice: "You just deleted a Pokemon from your Bowl"
   end
 
+  def onsale?
+    @pokemon.onsale
+  end
+
   private
 
   def poke_params

@@ -5,7 +5,7 @@
 
         <div class="card-trip flip-card-inner">
 
-            <div class="flip-card-front">
+            <div class="flip-card-front <%= pokemon.onsale? ? 'onsale' : 'offsale' %>">
               <% if pokemon.photoseed.nil? %>
               <%= cl_image_tag pokemon.photo,crop: :fill, gravity: :face, class: 'flip-img' %>
               <% else %>
@@ -24,15 +24,17 @@
 
             <div class="flip-card-back px-4 d-flex justify-content-around flex-column">
               <h3 style= "margin-top: 10px;"><%= pokemon.name %></h3>
-              <p>Sold by: <%= pokemon.user.username %> </p>
+              <p>Owner: <%= pokemon.user.username %> </p>
               <p>Description: <%= pokemon.description %> </p>
+              <p>Onsale: <%= pokemon.onsale %></p>
               <div class= "align-self-end justify-self-end">
-                <%= link_to "add wishlist", pokemon_dashboard_path(pokemon), method: :post,  class: "btn btn-primary add-wishlist" %>
+                <% if pokemon.onsale? %>
+                <%= link_to "Buy", pokemon_transactions_path(pokemon), method: :post, class: "btn btn-primary"%>
+                <% end %>
+                <%= link_to "add wishlist", pokemon_dashboard_path(pokemon), method: :post,  class: "btn btn-secondary add-wishlist" %>
               </div>
             </div>
         </div>
-
-
     </div>
   <% end %>
 </div>
