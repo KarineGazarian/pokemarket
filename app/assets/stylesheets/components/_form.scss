@@ -1,6 +1,6 @@
 .form-background {
   background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/09c6d16e-5128-4ff0-b289-acc1d123982b/d90f9yt-b842fab0-de30-4e79-aac2-aa8d0fb5e8a7.png/v1/fill/w_1131,h_707,q_70,strp/pikachu_background_yellow_by_mrredstonewolf_d90f9yt-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAwMCIsInBhdGgiOiJcL2ZcLzA5YzZkMTZlLTUxMjgtNGZmMC1iMjg5LWFjYzFkMTIzOTgyYlwvZDkwZjl5dC1iODQyZmFiMC1kZTMwLTRlNzktYWFjMi1hYThkMGZiNWU4YTcucG5nIiwid2lkdGgiOiI8PTE2MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.j5ELyHvAEXVZxN2f3bguHYGYm5kIjK_VdEBZ7lb4SAc");
-  margin: 0
+  margin: 0;
 }
 
 
@@ -14,12 +14,6 @@
 }
 
 
-
-// .form-background2 {
-
-// }
-
-
 .form-group {
   margin: 20px;
 }
@@ -31,9 +25,28 @@
   background-position: calc(100% - 5px);
   justify-content: center;
   margin: auto;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.09);
 }
 
+.input-shape {
+  border: none;
+  border-radius: 25px;
+}
 
-// .btn-new {
-//   align: right;
-// }
+.btn-new {
+  color: white;
+  border-radius: 8px;
+  background: #faf562;
+  transition: background 0.3s ease;
+  height: 50px;
+  width: 150px;
+  text-align: center;
+  border: none;
+}
+
+.btn-new:hover {
+  background: #0075f6;
+  color: white;
+}
