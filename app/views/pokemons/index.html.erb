@@ -31,11 +31,17 @@
                 <p>Category: <%= pokemon.category %></p>
                 <p>Level: <%= pokemon.level %></p>
                 <p>Description: <%= pokemon.description %> </p>
-                <div class= "mt-4">
-                  <% if pokemon.onsale? %>
-                  <%= link_to "Buy", pokemon_transactions_path(pokemon), method: :post, class: "btn btn-primary"%>
+                <div class= "d-flex justify-content-around mt-4">
+                  <div>
+                  <% if pokemon.onsale? && pokemon.user != current_user %>
+                    <%= link_to "Buy", pokemon_transactions_path(pokemon), method: :post, class: "customer-btn"%>
                   <% end %>
-                  <%= link_to "add wishlist", pokemon_dashboard_path(pokemon), method: :post,  class: "btn btn-secondary add-wishlist" %>
+                  </div>
+                  <div>
+                  <% if pokemon.user != current_user %>
+                    <%= link_to "Wishlist", pokemon_dashboard_path(pokemon), method: :post,  class: "customer-btn" %>
+                  <% end %>
+                  </div>
                 </div>
               </div>
             </div>

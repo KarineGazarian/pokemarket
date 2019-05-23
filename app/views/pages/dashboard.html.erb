@@ -34,8 +34,12 @@
           <% if !pokemon.onsale? %>
             <%= link_to 'Add on sale', pokemon_transactions_path(pokemon), method: :patch %>
           <% end %>
-          <%= link_to 'delete', pokemon_path(pokemon), method: :delete %>
-          <%= link_to 'edit', edit_pokemon_path(pokemon) %>
+          <div class="poke-admin-btn">
+            <p> <%= link_to 'delete', pokemon_path(pokemon), method: :delete %> </p>
+          </div>
+          <div class="poke-admin-btn">
+            <p> <%= link_to 'edit', edit_pokemon_path(pokemon) %> </p>
+          </div>
         </div>
       </div>
     <% end %>
@@ -63,8 +67,10 @@
             </div>
             <p> Category: <%= wishlist.pokemon.category %></p>
             <p> Level: <%= wishlist.pokemon.level %></p>
-            <%= link_to "Buy", pokemon_transactions_path(wishlist.pokemon), method: :post, class: "btn btn-primary" %>
-            <%= link_to "Remove", pokemon_dashboard_path(wishlist.pokemon), method: :delete %>
+            <div class="d-flex">
+              <%= link_to "Buy", pokemon_transactions_path(wishlist.pokemon), method: :post, class: "customer-btn" %>
+              <%= link_to "Remove", pokemon_dashboard_path(wishlist.pokemon), method: :delete, class: "customer-btn" %>
+            </div>
           </div>
         </div>
       <% end %>
