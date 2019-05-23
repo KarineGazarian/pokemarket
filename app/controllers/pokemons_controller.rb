@@ -3,7 +3,11 @@ class PokemonsController < ApplicationController
 
   def index
     # @pokemons = Pokemon.all
+    if params[:query].present?
+      @pokemons = Pokemon.search_by_name_and_category(params[:query])
+    else
     @pokemons = policy_scope(Pokemon)
+  end
   end
 
   def show
@@ -21,9 +25,11 @@ class PokemonsController < ApplicationController
     @pokemon = Pokemon.new(poke_params)
     @pokemon.user = current_user
     authorize @pokemon
-    @pokemon.save
-
-    redirect_to dashboard_path
+    if @pokemon.save
+      redirect_to dashboard_path
+    else
+      render :new
+    end
   end
 
   def edit
