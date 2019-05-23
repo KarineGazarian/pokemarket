@@ -9,6 +9,15 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+  <div>
+    <%= form_tag pokemons_path, method: :get do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search a Pokemon by name or category"
+  %>
+<% end %>
+  </div>
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
