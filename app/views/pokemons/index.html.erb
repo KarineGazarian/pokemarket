@@ -1,11 +1,10 @@
-<div class="cards">
+<div class="cards" id="index">
   <% @pokemons.each do |pokemon| %>
     <div class="flip-card">
 
-
         <div class="card-trip flip-card-inner">
 
-            <div class="flip-card-front <%= pokemon.onsale? ? 'onsale' : 'offsale' %>">
+            <div class="flip-card-front <%= pokemon.onsale? ? 'onsale' : 'front-offsale' %>">
               <% if pokemon.photoseed.nil? %>
               <%= cl_image_tag pokemon.photo,crop: :fill, gravity: :face, class: 'flip-img' %>
               <% else %>
@@ -13,25 +12,31 @@
               <% end %>
 
               <div class="card-trip-infos">
-                <div>
+                <div class="card-trip-headline">
                   <h3><%= pokemon.name %></h3>
-                  <h2 class="card-trip-pricing"><%= pokemon.price %>€</h2>
-                  <p>Category: <%= pokemon.category %></p>
-                  <p>Level: <%= pokemon.level %></p>
+                  <h2><%= pokemon.price %>€</h2>
                 </div>
+                <p class="mt-2">Category: <%= pokemon.category %></p>
+                <p>Level: <%= pokemon.level %></p>
               </div>
             </div>
 
-            <div class="flip-card-back px-4 d-flex justify-content-around flex-column">
-              <h3 style= "margin-top: 10px;"><%= pokemon.name %></h3>
-              <p>Owner: <%= pokemon.user.username %> </p>
-              <p>Description: <%= pokemon.description %> </p>
-              <p>Onsale: <%= pokemon.onsale %></p>
-              <div class= "align-self-end justify-self-end">
-                <% if pokemon.onsale? %>
-                <%= link_to "Buy", pokemon_transactions_path(pokemon), method: :post, class: "btn btn-primary"%>
-                <% end %>
-                <%= link_to "add wishlist", pokemon_dashboard_path(pokemon), method: :post,  class: "btn btn-secondary add-wishlist" %>
+            <div class="flip-card-back <%= pokemon.onsale? ? 'onsale' : 'back-offsale' %>">
+              <div class="card-trip-infos">
+                <div class="card-trip-headline">
+                  <h3><%= pokemon.name %></h3>
+                  <h2><%= pokemon.price %>€</h2>
+                </div>
+                <p class="mt-2">Owner: <%= pokemon.user.username %> </p>
+                <p>Category: <%= pokemon.category %></p>
+                <p>Level: <%= pokemon.level %></p>
+                <p>Description: <%= pokemon.description %> </p>
+                <div class= "mt-4">
+                  <% if pokemon.onsale? %>
+                  <%= link_to "Buy", pokemon_transactions_path(pokemon), method: :post, class: "btn btn-primary"%>
+                  <% end %>
+                  <%= link_to "add wishlist", pokemon_dashboard_path(pokemon), method: :post,  class: "btn btn-secondary add-wishlist" %>
+                </div>
               </div>
             </div>
         </div>

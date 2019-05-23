@@ -1,70 +1,4 @@
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 30px;
-}
-
-.cards-landing {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 60px;
-}
-
-
-.cards-dashboard {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
-}
-
-.cards-landing a:hover {
-  text-decoration: none;
-}
-
-
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
-
-@media (min-width: 992px) {
-  .cards-landing {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
-
 // LANDING PAGE
-
 .card-category {
   background-size: cover;
   background-position: top;
@@ -83,83 +17,73 @@
   &:hover,
   &:focus {
     transform: scale3d(1.01, 1.01, 1);
-
-    &::after {
-      opacity: 1;
-    }
   }
 }
 
-.card-grey {
+.cards#landing a:hover {
+  text-decoration: none;
+}
+
+.card-gray {
   background: $light-gray;
 }
 
 // INDEX PAGE
 
-.offsale {
-  opacity: 0.5;
-}
-
 .card-trip {
-  // overflow: hidden;
-  background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
 
-.card-trip > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-trip h3 {
-  font-size: 30px;
-  color: #CC0000;
-}
-
-.card-trip h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-trip p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
+  h3 {
+    font-size: 30px;
+    color: $red;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 14px;
+    opacity: .7;
+    margin: 0;
+  }
 }
 
 .card-trip .card-trip-infos {
   padding: 16px;
+}
+
+.card-trip-headline {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+  align-items: center;
+  border-bottom: 1px solid $medium-gray;
 }
 
 // DASHBOARD PAGE
 
-.card-trip-dashboard{
-  // overflow: hidden;
-  margin-bottom: 8px;
-  list-style-type: none;
-  padding: 0 ;
-  // padding: 0px !important
-
-  a:hover {
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bolder;
-  color: #156EEA;
-
-}}
-
-.card-trip-dashboard p:hover {
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bolder;
+.dashboard-hover {
+  &:hover,
+  &:focus {
+    transform: scale3d(1.003, 1.003, 1);
+  }
 }
 
-.add-poke {
-  text-decoration: none;
+.img-dashboard {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  object-position: 25% 25%;
 }
+
+// ONSALE OR OFFSALE TOGGLE
+
+.front-offsale {
+  opacity: 0.5;
+}
+
+.back-offsale {
+  opacity: 0.2;
+}
+

@@ -12,9 +12,9 @@
 
 <br>
 
-<div class="cards-landing">
+<div class="cards" id="landing">
   <%= link_to root_path do %>
-    <div class="card-grey">
+    <div class="card-gray">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path("Pokemon market/pikachu_dsgefu.jpg", crop: :fill )%>')">
         Pikachu
       </div>
@@ -22,7 +22,7 @@
   <% end %>
 
   <%= link_to root_path do %>
-    <div class="card-grey">
+    <div class="card-gray">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path("Pokemon market/Charizard_x4n8hn.png", crop: :fill )%>')">
         Charizard
       </div>
@@ -30,7 +30,7 @@
   <% end %>
 
   <%= link_to root_path do %>
-    <div class="card-grey">
+    <div class="card-gray">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path("Pokemon market/Bulbasaur_nlifv7.png", gravity: :face)%>')">
         Bulbasaur
       </div>
