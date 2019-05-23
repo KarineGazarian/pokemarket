@@ -9,4 +9,8 @@ class PagesController < ApplicationController
     @wishlist_pokemons = policy_scope(Wishlist).where(user: current_user)
   end
 
+  def transactions
+    @user_transactions = policy_scope(Transaction).where(user: current_user)
+  end
+
 end
