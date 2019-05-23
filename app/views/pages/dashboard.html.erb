@@ -9,40 +9,39 @@
   <div class="d-flex justify-content-between">
     <h3>My Pokemons</h3>
     <%= link_to new_pokemon_path do %>
-     <%= image_tag "https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG", height: 30, width: 30 %>
-     <%= "Add a pokemon" %>
-    <% end  %>
+      <%= image_tag "https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG", height: 30, width: 30 %>
+      <%= "Add a pokemon" %>
+    <% end %>
   </div>
-  <div class="cards-dashboard">
+
+  <div class="cards" id="dashboard">
     <% @user_pokemons.each do |pokemon| %>
-    <div class="card-trip card-trip-dashboard card-trip-infos <%= pokemon.onsale? ? 'onsale' : 'offsale' %>">
-      <div class="card-details">
-        <h3><%= pokemon.name %></h3>
+      <div class="card-trip card-trip-infos card-gray dashboard-hover <%= pokemon.onsale? ? 'onsale' : 'front-offsale' %>" >
+
         <% if pokemon.photoseed.nil? %>
-        <%= cl_image_tag pokemon.photo, height: 300, width: 400, crop: :fill, class: "rounded mx-auto d-block" %>
+        <%= cl_image_tag pokemon.photo, height: 300, width: 400, crop: :fill, class:"img-dashboard" %>
         <% else %>
-        <%= image_tag pokemon.photoseed,height: 300, width: 400, crop: :fill, align: :center, class: "rounded mx-auto d-block" %>
+        <%= image_tag pokemon.photoseed, height: 300, width: 400, crop: :fill, align: :center, class:"img-dashboard" %>
         <% end %>
-        <div class="d-flex justify-content-between">
 
-          <div class="ml-3">
-            <p> Category: <%= pokemon.category %></p>
-            <p> Level: <%= pokemon.level %></p>
-            <p>
-              <% if !pokemon.onsale? %>
-              <%= link_to 'Add on sale', pokemon_transactions_path(pokemon), method: :patch %>
-              <% end %>
-
-            </p>
-            <p><%= link_to 'delete', pokemon_path(pokemon), method: :delete %></p>
-            <p><%= link_to 'edit', edit_pokemon_path(pokemon) %></p>
+        <div class="card-trip-infos">
+          <div class="card-trip-headline mt-2">
+            <h3><%= pokemon.name %></h3>
+            <h2><%= pokemon.price %>€</h2>
           </div>
-          <div class="card-trip-pricing mr-3">
-            <p><strong> Price: <%= pokemon.price %>€</strong></p>
+          <p class="mt-2">Category: <%= pokemon.category %></p>
+          <p>Level: <%= pokemon.level %></p>
+          <% if !pokemon.onsale? %>
+            <%= link_to 'Add on sale', pokemon_transactions_path(pokemon), method: :patch %>
+          <% end %>
+          <div class="poke-admin-btn">
+            <p> <%= link_to 'delete', pokemon_path(pokemon), method: :delete %> </p>
+          </div>
+          <div class="poke-admin-btn">
+            <p> <%= link_to 'edit', edit_pokemon_path(pokemon) %> </p>
           </div>
         </div>
       </div>
-    </div>
     <% end %>
   </div>
 </div>
@@ -51,21 +50,27 @@
 
 <div>
   <h3>My Wishlist</h3>
-  <div class="cards-dashboard">
+  <div class="cards" id="dashboard">
       <% @wishlist_pokemons.each do |wishlist| %>
-        <div class="card-trip card-trip-dashboard card-trip-infos">
-          <div class="card-details">
-            <h3><%= wishlist.pokemon.name %></h3>
-              <% if wishlist.pokemon.photoseed.nil? %>
-                <%= cl_image_tag wishlist.pokemon.photo, height: 300, width: 400, crop: :fill, class: "rounded mx-auto d-block" %>
-                <% else %>
-                <%= image_tag wishlist.pokemon.photoseed,height: 300, width: 400, crop: :fill, align: :center, class: "rounded mx-auto d-block" %>
-              <% end %>
-              <p> Category: <%= wishlist.pokemon.category %></p>
-              <p> Level: <%= wishlist.pokemon.level %></p>
-              <p><strong> Price: <%= wishlist.pokemon.price %>€</strong></p>
-              <%= link_to "Buy", pokemon_transactions_path(wishlist.pokemon), method: :post, class: "btn btn-primary" %>
-              <%= link_to "Remove", pokemon_dashboard_path(wishlist.pokemon), method: :delete %>
+        <div class="card-trip card-trip-infos card-gray dashboard-hover">
+
+          <% if wishlist.pokemon.photoseed.nil? %>
+            <%= cl_image_tag wishlist.pokemon.photo, height: 300, width: 400, crop: :fill, class:"img-dashboard" %>
+            <% else %>
+            <%= image_tag wishlist.pokemon.photoseed,height: 300, width: 400, crop: :fill, align: :center, class:"img-dashboard" %>
+          <% end %>
+
+          <div class="card-trip-infos">
+            <div class="card-trip-headline mt-2">
+              </@><h3><%= wishlist.pokemon.name %></h3>
+              <h2><%= wishlist.pokemon.price %>€</h2>
+            </div>
+            <p> Category: <%= wishlist.pokemon.category %></p>
+            <p> Level: <%= wishlist.pokemon.level %></p>
+            <div class="d-flex">
+              <%= link_to "Buy", pokemon_transactions_path(wishlist.pokemon), method: :post, class: "customer-btn" %>
+              <%= link_to "Remove", pokemon_dashboard_path(wishlist.pokemon), method: :delete, class: "customer-btn" %>
+            </div>
           </div>
         </div>
       <% end %>

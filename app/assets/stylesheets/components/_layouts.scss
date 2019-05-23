@@ -2,3 +2,54 @@
   min-height: calc(100vh - 190px);
   overflow: auto;
 }
+
+// GRIDS DESIGN
+
+.cards#index {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.cards#landing {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 60px;
+}
+
+.cards#dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards#index {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 576px) {
+  .cards#index {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .cards#index {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .cards#index {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards#index {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
