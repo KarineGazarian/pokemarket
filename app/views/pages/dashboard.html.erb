@@ -15,7 +15,7 @@
   </div>
   <div class="cards-dashboard">
     <% @user_pokemons.each do |pokemon| %>
-    <div class="card-trip card-trip-dashboard card-trip-infos">
+    <div class="card-trip card-trip-dashboard card-trip-infos <%= pokemon.onsale? ? 'onsale' : 'offsale' %>">
       <div class="card-details">
         <h3><%= pokemon.name %></h3>
         <% if pokemon.photoseed.nil? %>
@@ -28,6 +28,12 @@
           <div class="ml-3">
             <p> Category: <%= pokemon.category %></p>
             <p> Level: <%= pokemon.level %></p>
+            <p>
+              <% if !pokemon.onsale? %>
+              <%= link_to 'Add on sale', pokemon_transactions_path(pokemon), method: :patch %>
+              <% end %>
+
+            </p>
             <p><%= link_to 'delete', pokemon_path(pokemon), method: :delete %></p>
             <p><%= link_to 'edit', edit_pokemon_path(pokemon) %></p>
           </div>
@@ -58,6 +64,7 @@
               <p> Category: <%= wishlist.pokemon.category %></p>
               <p> Level: <%= wishlist.pokemon.level %></p>
               <p><strong> Price: <%= wishlist.pokemon.price %>€</strong></p>
+              <%= link_to "Buy", pokemon_transactions_path(wishlist.pokemon), method: :post, class: "btn btn-primary" %>
               <%= link_to "Remove", pokemon_dashboard_path(wishlist.pokemon), method: :delete %>
           </div>
         </div>
