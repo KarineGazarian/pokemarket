@@ -1,40 +1,9 @@
-// _button.scss
-
-// Wishlist button --------------------------------------------------------------------------------------------------
-
-.like-content {
-    display: inline-block;
-    font-size: 18px;
-    text-align: center;
-}
-
-.like-content .btn-secondary {
-    display: block;
-    text-align: center;
-    background: $red;
-    border-radius: 3px;
-    box-shadow: 0 10px 20px -8px rgb(240, 75, 113);
-    padding: 10px 17px;
-    font-size: 18px;
-    cursor: url(Pokeball_2.png), auto;
-    border: none;
-    outline: none;
-    color: #ffffff;
-    text-decoration: none;
-    -webkit-transition: 0.3s ease;
-    -webkit-zoom-in: 1s ease;
-    transition: 0.3s ease;
-}
-
-.like-content .btn-secondary:hover {
-    transform: translateY(-3px);
-}
-
-// Add button --------------------------------------------------------------------------------------------------
+// BUY, ADD TO WISHLIST
 
 .customer-btn {
     display: flex;
-    padding: 5px 20px;
+    padding: 5px 18px;
+    margin-right: 8px;
     text-decoration: none;
     font-family: "Bangers", "Helvetica", "sans-serif";
     font-size: 20px;
@@ -42,7 +11,7 @@
     background: $red;
     border-radius: 4px;
     transition: 1s;
-    box-shadow: 6px 6px 0 #035ac1;
+    box-shadow: 6px 6px 0 $blue;
     transform: skewX(-15deg);
 }
 
@@ -52,9 +21,9 @@
 
 .customer-btn:hover {
     transition: 0.5s;
-    box-shadow: 10px 10px 0 #FBC638;
+    box-shadow: 10px 10px 0 $yellow;
     text-decoration: none;
-    color: #035ac1;
+    color: $blue;
 }
 
 .customer-btn span:nth-child(2) {
@@ -78,90 +47,174 @@
     top: 12%;
   }
 
+// EDIT, DELETE, PUT ON SALE
+
+.poke-admin-btn {
+    display: flex;
+    padding: 5px 18px;
+    margin-right: 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    background: $blue;
+    border-radius: 4px;
+    transition: 1s;
+    box-shadow: 6px 6px 0 $red;
+    transform: skewX(-15deg);
+}
+
+.poke-admin-btn a {
+  color: white;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.poke-admin-btn:focus {
+   outline: none;
+}
+
+.poke-admin-btn:hover {
+    transition: 0.5s;
+    box-shadow: 10px 10px 0 $yellow;
+    text-decoration: none;
+    color: $blue;
+}
+
+.poke-admin-btn span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 0px;
+}
+
+.poke-admin-btn:hover  span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 45px;
+}
+
+  span {
+    transform: skewX(15deg)
+  }
+
+  span:nth-child(2) {
+    width: 20px;
+    margin-left: 30px;
+    position: relative;
+    top: 12%;
+  }
 
 // delete button --------------------------------------------------------------------------------------------------
 
 /*Neon*/
 
-.poke-admin-btn {
-p {
-  text-align: left;
-  font-size: 20px;
-  margin: 20px 0 20px 0;
-}
+// .poke-admin-btn {
+// p {
+//   text-align: left;
+//   font-size: 20px;
+//   margin: 20px 0 20px 0;
+// }
 
-a {
-  text-decoration: none;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  transition: all 0.5s;
-}
+// a {
+//   text-decoration: none;
+//   -webkit-transition: all 0.5s;
+//   -moz-transition: all 0.5s;
+//   transition: all 0.5s;
+// }
 
-p:nth-child(1) a {
-  color: #fff;
-  font-family: Monoton;
-  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-  animation: neon1 1.5s ease-in-out infinite alternate;
-}
+// p:nth-child(1) a {
+//   color: #fff;
+//   font-family: Monoton;
+//   -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+//   -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+//   animation: neon1 1.5s ease-in-out infinite alternate;
+// }
 
-p:nth-child(1) a:hover {
-  color: #FF1177;
-  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-  animation: neon1 1.5s ease-in-out infinite alternate;
-  // -webkit-animation: none;
-  // -moz-animation: none;
-  // animation: none;
-  text-decoration:none;
-}
+// p:nth-child(1) a:hover {
+//   color: #FF1177;
+//   -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+//   -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+//   animation: neon1 1.5s ease-in-out infinite alternate;
+//   // -webkit-animation: none;
+//   // -moz-animation: none;
+//   // animation: none;
+//   text-decoration:none;
+// }
 
-p a:hover {
-  color: #ffffff;
-}
-/*glow for webkit*/
+// p a:hover {
+//   color: #ffffff;
+// }
+// /*glow for webkit*/
 
-@-webkit-keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
-  }
-}
+// @-webkit-keyframes neon1 {
+//   from {
+//     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+//   }
+//   to {
+//     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+//   }
+// }
 
-/*glow for mozilla*/
+// /*glow for mozilla*/
 
-@-moz-keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
-  }
-}
+// @-moz-keyframes neon1 {
+//   from {
+//     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+//   }
+//   to {
+//     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+//   }
+// }
 
-/*glow*/
+// /*glow*/
 
-@keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
-  }
-}
+// @keyframes neon1 {
+//   from {
+//     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+//   }
+//   to {
+//     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+//   }
+// }
 
-/*REEEEEEEEEEESPONSIVE*/
+// /*REEEEEEEEEEESPONSIVE*/
 
-@media (max-width: 650px) {
-  #container {
-    width: 100%;
-  }
-  p {
-    font-size: 3.5em;
-  }
-}
+// @media (max-width: 650px) {
+//   #container {
+//     width: 100%;
+//   }
+//   p {
+//     font-size: 3.5em;
+//   }
+// }
 
-}
+// }
+
+// // Wishlist button --------------------------------------------------------------------------------------------------
+
+// .like-content {
+//     display: inline-block;
+//     font-size: 18px;
+//     text-align: center;
+// }
+
+// .like-content .btn-secondary {
+//     display: block;
+//     text-align: center;
+//     background: $red;
+//     border-radius: 3px;
+//     box-shadow: 0 10px 20px -8px rgb(240, 75, 113);
+//     padding: 10px 17px;
+//     font-size: 18px;
+//     cursor: url(Pokeball_2.png), auto;
+//     border: none;
+//     outline: none;
+//     color: #ffffff;
+//     text-decoration: none;
+//     -webkit-transition: 0.3s ease;
+//     -webkit-zoom-in: 1s ease;
+//     transition: 0.3s ease;
+// }
+
+// .like-content .btn-secondary:hover {
+//     transform: translateY(-3px);
+// }
 
