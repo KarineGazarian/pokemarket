@@ -1,0 +1,11 @@
+// audio.js.erb
+
+var audio = new Audio('songs/Pokemon.mp4');
+audio.play();
+
+function add_audio_in_home(innerHTML) {
+  const newReviewForm = document.getElementById('new_review');
+  newReviewForm.innerHTML = innerHTML;
+}
+
+add_audio_in_home('<%= j render "reviews/form", restaurant: @restaurant, review: @review %>');y
