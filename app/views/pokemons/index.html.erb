@@ -2,17 +2,17 @@
   <% @pokemons.each do |pokemon| %>
     <div class="flip-card">
 
-        <div class="card-trip flip-card-inner">
+        <div class="card-poke flip-card-inner">
 
-            <div class="flip-card-front <%= pokemon.onsale? ? 'onsale' : 'front-offsale' %>">
+            <div class="flip-card-front h-100 <%= pokemon.onsale? ? 'onsale' : 'front-offsale' %>">
               <% if pokemon.photoseed.nil? %>
               <%= cl_image_tag pokemon.photo,crop: :fill, gravity: :face, class: 'flip-img' %>
               <% else %>
               <%= image_tag pokemon.photoseed,crop: :fill, gravity: :face, class: 'flip-img' %>
               <% end %>
 
-              <div class="card-trip-infos">
-                <div class="card-trip-headline">
+              <div class="card-poke-infos">
+                <div class="card-poke-headline">
                   <h3><%= pokemon.name %></h3>
                   <h2><%= pokemon.price %>€</h2>
                 </div>
@@ -21,25 +21,31 @@
               </div>
             </div>
 
-            <div class="flip-card-back <%= pokemon.onsale? ? 'onsale' : 'back-offsale' %>">
-              <div class="card-trip-infos">
-                <div class="card-trip-headline">
+            <div class="flip-card-back h-100 <%= pokemon.onsale? ? 'onsale' : 'back-offsale' %>">
+              <div class="card-poke-infos">
+                <div class="card-poke-headline">
                   <h3><%= pokemon.name %></h3>
                   <h2><%= pokemon.price %>€</h2>
                 </div>
-                <p class="mt-2">Owner: <%= pokemon.user.username %> </p>
+                <% if pokemon.user == current_user %>
+                  <p class="mt-2 text-secondary"> My own baby Pokemon </p>
+                <% else %>
+                  <p class="mt-2 text-secondary">Owner: <%= pokemon.user.username %> </p>
+                <% end %>
                 <p>Category: <%= pokemon.category %></p>
                 <p>Level: <%= pokemon.level %></p>
                 <p>Description: <%= pokemon.description %> </p>
-                <div class= "d-flex justify-content-around mt-4">
+                <div class= "card-poke-btns">
+                  <% if pokemon.user != current_user %>
+                    <% if @current_user_wishlists.select{ |wishlist| wishlist.pokemon == pokemon } == [] %>
+                      <%= link_to "♡", pokemon_dashboard_path(pokemon), method: :post,  class: "customer-btn" %>
+                    <% else %>
+                      <%= link_to "♥", pokemon_dashboard_path(pokemon), method: :post,  class: "customer-btn" %>
+                    <% end %>
+                  <% end %>
                   <div>
                   <% if pokemon.onsale? && pokemon.user != current_user %>
-                    <%= link_to "Buy", pokemon_transactions_path(pokemon), method: :post, class: "customer-btn"%>
-                  <% end %>
-                  </div>
-                  <div>
-                  <% if pokemon.user != current_user %>
-                    <%= link_to "Wishlist", pokemon_dashboard_path(pokemon), method: :post,  class: "customer-btn" %>
+                    <%= link_to "Buy", pokemon_transactions_path(pokemon), method: :post, class: "customer-btn" %>
                   <% end %>
                   </div>
                 </div>
