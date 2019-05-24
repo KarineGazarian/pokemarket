@@ -1,4 +1,6 @@
 import "bootstrap";
+import {Howl, Howler} from 'howler';
+import { pokebowl } from "./pokebowl";
 
 
 if (document.querySelector(".pages.home")) {
@@ -20,5 +22,3 @@ if (document.querySelector(".pages.home")) {
 
 
 // ''
-
-
