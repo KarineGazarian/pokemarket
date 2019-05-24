@@ -2,7 +2,7 @@
 .flip-card {
   background-color: transparent;
   width: 230px;
-  height: 290px;
+  height: 320px;
   perspective: 1000px;
 }
 /* This container is needed to position the front and back side */
@@ -27,10 +27,12 @@
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
   background-color: white;
+  border-radius: 3px;
 }
 /* Style the back side */
 .flip-card-back {
   background-color: white;
+  border-radius: 3px;
   transform: rotateY(180deg);
 }
 

@@ -30,8 +30,10 @@
 
 // INDEX PAGE
 
-.card-trip {
+.card-poke {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 3px;
+  position: relative;
 
   h3 {
     font-size: 30px;
@@ -47,15 +49,25 @@
   }
 }
 
-.card-trip .card-trip-infos {
+.card-poke .card-poke-infos {
   padding: 16px;
 }
 
-.card-trip-headline {
+.card-poke-headline {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid $medium-gray;
+}
+
+.card-poke-btns {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 15px;
+  position: absolute;
+  right: 15px;
+  bottom: 30px;
 }
 
 // DASHBOARD PAGE

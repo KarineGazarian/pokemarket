@@ -1,34 +1,32 @@
 <%= simple_form_for(@pokemon) do |f| %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
+    <%= f.input :name, class: "form-control" %>
   </div>
 
   <div class="form-inputs">
-    <%= f.input :category, collection: %w(normal fire water grass electric ice fighting poison ground flying psychic bug rock ghost dark dragon steel fairy) %>
+    <%= f.input :category, collection: %w(normal fire water grass electric ice fighting poison ground flying psychic bug rock ghost dark dragon steel fairy), class: "form-control" %>
   </div>
 
   <div class="form-inputs">
-    <%= f.input :level %>
+    <%= f.input :level, class: "form-control" %>
   </div>
 
   <div class="form-inputs">
-    <%= f.input :description %>
+    <%= f.input :description, class: "form-control" %>
   </div>
 
   <div class="form-inputs">
-    <%= f.input :price %>
+    <%= f.input :price, class: "form-control" %>
   </div>
 
   <div class="form-inputs ">
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
+      <%= f.input :photo, label: "Add a Photo", input_html: {style: "display:none;"}, label_html: {class: "btn-new", style: "width: 150px; text-align:center;"} %>
+      <%= f.input :photo_cache, as: :hidden %>
   </div>
 
   <div class="form-actions align-center">
-    <button class="btn btn-primary btn-new">
-    <%= f.button :submit %>
-    </button>
+    <%= f.button :submit, class: "btn-new", style: "float: right;" %>
   </div>
 <% end %>
 

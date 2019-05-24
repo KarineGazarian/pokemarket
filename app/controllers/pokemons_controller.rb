@@ -4,16 +4,26 @@ class PokemonsController < ApplicationController
   def index
     # @pokemons = Pokemon.all
     @pokemons = policy_scope(Pokemon).all
+    @wishlists = []
+    @pokemons.each do |poke|
+      @wishlists << Wishlist.where(pokemon: poke).first if !Wishlist.where(pokemon: poke).first.nil?
+    end
+    @current_user_wishlists = []
+    @wishlists.each do |wishlist|
+      @current_user_wishlists << wishlist if wishlist.user == current_user
+    end
+
     if params[:query].present?
       if Pokemon.search_by_name_and_category(params[:query]).present?
         @pokemons = Pokemon.search_by_name_and_category(params[:query])
-        else
-      flash[:notice] = "😥 There is nothing corresponding to your search, please try again!"
-      redirect_to pokemons_path
+      else
+        flash[:notice] = "😥 There is nothing corresponding to your search, please try again!"
+        redirect_to pokemons_path
       end
     else
     @pokemons = policy_scope(Pokemon).all
     end
+
   end
 
   def show
