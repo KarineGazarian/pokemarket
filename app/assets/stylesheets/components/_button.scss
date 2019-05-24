@@ -102,119 +102,46 @@
     top: 12%;
   }
 
-// delete button --------------------------------------------------------------------------------------------------
+// FORM BUTTON
 
-/*Neon*/
+.btn-new {
+    display: flex;
+    padding: 5px 20px;
+    text-decoration: none;
+    font-family: "Bangers", "Helvetica", "sans-serif";
+    font-size: 20px;
+    color: white;
+    background: $red;
+    border-radius: 4px;
+    transition: 1s;
+    box-shadow: 6px 6px 0 $blue;
+    transform: skewX(-15deg);
+}
 
-// .poke-admin-btn {
-// p {
-//   text-align: left;
-//   font-size: 20px;
-//   margin: 20px 0 20px 0;
-// }
+.btn-new-photo {
+    display: flex;
+    padding: 5px 20px;
+    text-decoration: none;
+    font-family: "Bangers", "Helvetica", "sans-serif";
+    font-size: 20px;
+    color: white;
+    background: $blue;
+    border-radius: 4px;
+    transition: 1s;
+    box-shadow: 6px 6px 0 $red;
+    transform: skewX(-15deg);
+}
 
-// a {
-//   text-decoration: none;
-//   -webkit-transition: all 0.5s;
-//   -moz-transition: all 0.5s;
-//   transition: all 0.5s;
-// }
+.btn-new:hover {
+  transition: 0.5s;
+    box-shadow: 10px 10px 0 $yellow;
+    text-decoration: none;
+    color: $blue;
+}
 
-// p:nth-child(1) a {
-//   color: #fff;
-//   font-family: Monoton;
-//   -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-//   -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-//   animation: neon1 1.5s ease-in-out infinite alternate;
-// }
-
-// p:nth-child(1) a:hover {
-//   color: #FF1177;
-//   -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-//   -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-//   animation: neon1 1.5s ease-in-out infinite alternate;
-//   // -webkit-animation: none;
-//   // -moz-animation: none;
-//   // animation: none;
-//   text-decoration:none;
-// }
-
-// p a:hover {
-//   color: #ffffff;
-// }
-// /*glow for webkit*/
-
-// @-webkit-keyframes neon1 {
-//   from {
-//     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
-//   }
-//   to {
-//     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
-//   }
-// }
-
-// /*glow for mozilla*/
-
-// @-moz-keyframes neon1 {
-//   from {
-//     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
-//   }
-//   to {
-//     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
-//   }
-// }
-
-// /*glow*/
-
-// @keyframes neon1 {
-//   from {
-//     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
-//   }
-//   to {
-//     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
-//   }
-// }
-
-// /*REEEEEEEEEEESPONSIVE*/
-
-// @media (max-width: 650px) {
-//   #container {
-//     width: 100%;
-//   }
-//   p {
-//     font-size: 3.5em;
-//   }
-// }
-
-// }
-
-// // Wishlist button --------------------------------------------------------------------------------------------------
-
-// .like-content {
-//     display: inline-block;
-//     font-size: 18px;
-//     text-align: center;
-// }
-
-// .like-content .btn-secondary {
-//     display: block;
-//     text-align: center;
-//     background: $red;
-//     border-radius: 3px;
-//     box-shadow: 0 10px 20px -8px rgb(240, 75, 113);
-//     padding: 10px 17px;
-//     font-size: 18px;
-//     cursor: url(Pokeball_2.png), auto;
-//     border: none;
-//     outline: none;
-//     color: #ffffff;
-//     text-decoration: none;
-//     -webkit-transition: 0.3s ease;
-//     -webkit-zoom-in: 1s ease;
-//     transition: 0.3s ease;
-// }
-
-// .like-content .btn-secondary:hover {
-//     transform: translateY(-3px);
-// }
-
+.btn-new-photo:hover {
+  transition: 0.5s;
+    box-shadow: 10px 10px 0 $yellow;
+    text-decoration: none;
+    color: $yellow;
+}

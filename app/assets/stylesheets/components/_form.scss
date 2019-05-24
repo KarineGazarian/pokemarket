@@ -39,27 +39,3 @@
   border-radius: 25px;
 }
 
-.btn-new {
-    display: flex;
-    padding: 5px 20px;
-    text-decoration: none;
-    font-family: "Bangers", "Helvetica", "sans-serif";
-    font-size: 20px;
-    color: white;
-    background: $red;
-    border-radius: 4px;
-    transition: 1s;
-    box-shadow: 6px 6px 0 #035ac1;
-    transform: skewX(-15deg);
-}
-
-.btn {
-  color: white !important;
-}
-
-.btn-new:hover {
-  transition: 0.5s;
-    box-shadow: 10px 10px 0 #FBC638;
-    text-decoration: none;
-    color: #035ac1;
-}
