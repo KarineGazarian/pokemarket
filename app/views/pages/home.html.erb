@@ -12,7 +12,14 @@
 </div>
 
 <br>
-
+<div class="cards" id="landing">
+  <%= link_to pokemons_path(:query => "pikachu") do %>
+    <div class="card-gray">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path("Pokemon market/pikachu_dsgefu.jpg", crop: :fill )%>')">
+        Pikachu
+      </div>
+    </div>
+  <% end %>
 
   <%= link_to pokemons_path(:query => "charizard") do %>
     <div class="card-gray">
